@@ -130,3 +130,100 @@ do {
   // code block
 } while (condition)
 ```
+
+# 5. Functions in JS
+
+```javascript
+// 1. explicit function
+function functionName(parameter1, parameter2) {
+  console.log(parameter1, parameter2)
+
+  return parameter1 + parameter2
+}
+
+const sum = functionName(1, 2) // log 1 2
+console.log(sum) // 3
+
+// 2. anonymous function - arrow function
+const functionName = (parameter1, parameter2) => {
+  console.log(parameter1, parameter2)
+
+  return parameter1 + parameter2
+}
+```
+
+- No return function is void function
+- Return is optional
+- Function can be assigned to a variable
+- Function can be passed as an argument to another function
+
+# 6. Objects
+
+- Object:
+
+  - Object with key-value pairs
+  - Array
+  - Function
+
+- Object with key-value pairs
+
+```javascript
+const person = {
+  name: 'Chit',
+  age: 25,
+  isAdult: true,
+  isAvailable: null,
+  love: function () {
+    console.log('I love you')
+  },
+  hobbies: ['reading', 'coding', 'gaming'],
+  address: {
+    city: 'Yangon',
+    country: 'Myanmar',
+  },
+}
+
+// Access object properties
+console.log(person.name) // Chit
+
+// Access object properties using bracket notation
+const a = 'name'
+console.log(person.a) // Error => a is not a property of person
+console.log(person[a]) // Chit => person['name']
+
+// Access object properties using for in loop
+for (let key in person) {
+  console.log(key, person[key])
+}
+
+console.log(person.address.city) // Yangon
+person.address.city = 'Mandalay'
+console.log(person.address.city) // Mandalay
+
+// call a function in object
+person.love() // I love you
+```
+
+- Array
+  - Array is a collection of elements
+  - Index starts from 0
+  - Array is an object
+
+```javascript
+const fruits = ['apple', 'banana', 'orange']
+
+// get length of array
+console.log(fruits.length) // 3
+
+// access array elements by index
+console.log(fruits[0]) // apple
+
+// loop through array
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i])
+}
+
+// add element to array
+fruits.push('mango')
+console.log(fruits) // ['apple', 'banana', 'orange', 'mango']
+```
