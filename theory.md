@@ -397,7 +397,7 @@ console.log(fruits) // ['apple', 'banana', 'orange', 'mango']
 
 - find
 
-  - Find the first element that satisfies the condition
+  - Find the **first** element that satisfies the condition
   - Return undefined if not found
 
   ```javascript
