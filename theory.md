@@ -373,7 +373,7 @@ console.log(fruits) // ['apple', 'banana', 'orange', 'mango']
 
 - indexOf
 
-  - Find the index of an element in an array
+  - Find the index of the first element in an array
   - Return -1 if not found
 
   ```javascript
@@ -435,6 +435,11 @@ console.log(fruits) // ['apple', 'banana', 'orange', 'mango']
   - If compare function is not provided, sort elements as strings
   - compare string in JS: <https://www.freecodecamp.org/news/javascript-string-comparison-how-to-compare-strings-in-js/>
 
+  - compare: 2 variables (a, b)
+    - return negative value if a < b
+    - return positive value if a > b
+    - return 0 if a = b
+
   ```javascript
   const fruits = ['apple', 'banana', 'orange', 'mango']
 
@@ -478,3 +483,24 @@ console.log(fruits) // ['apple', 'banana', 'orange', 'mango']
   ```
 
 </details>
+
+<details>
+<summary>## 8. Callback</summary>
+
+- Callback is a function that is passed as an argument (or a parameter) to another function
+
+  ```javascript
+  const sum = (a, b, anotherFunction) => {
+    const result = a + b
+    anotherFunction(result)
+  }
+
+  const printResult = (var) => {
+    console.log(var)
+  }
+
+  sum(1, 2, printResult) // 3
+
+
+  sum(1, 2, (result) => {console.log(result)}) // 3
+  ```
