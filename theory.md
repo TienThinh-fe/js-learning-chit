@@ -504,3 +504,5 @@ console.log(fruits) // ['apple', 'banana', 'orange', 'mango']
 
   sum(1, 2, (result) => {console.log(result)}) // 3
   ```
+
+## 9. ABC
