@@ -7,17 +7,17 @@ console.log('===== Exercise 1 =====')
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 // write your function here
-const sumOdd = (arr)=> {
+const sumOddNumbers = (arr) => {
   let result = 0;
-  arr.forEach((element) => {
+  arr.forEach((element)=> {
     if (element % 2 !== 0){
       result += element;
     }
-  }) 
+  })
   return (result);
 }
 // log the result
-console.log(sumOdd(array));
+console.log(sumOddNumbers(array));
 // result should be 25
 
 console.log('===== End of Exercise 1 =====')
@@ -30,17 +30,18 @@ console.log('===== Exercise 2 =====')
 const array2 = [1, 3, 9, 2, 3, 4, 5, 8]
 
 // write your function here
-const findIndexOfMaxValue = (arr)=>{
+const findIndexOfMaxValue = (arr) => {
   let currentMaxValue = arr[0];
   let currentMaxIndex = 0;
-  arr.forEach((element,index)=> {
-    if(element > currentMaxValue){
+  arr.forEach((element,index) => {
+    if (element > currentMaxValue){
       currentMaxValue = element;
       currentMaxIndex = index;
     }
   })
-  return {currentMaxValue:currentMaxValue,currentMaxIndex:currentMaxIndex}
+  return (currentMaxValue,currentMaxIndex);
 }
+
 // log the result
 console.log(findIndexOfMaxValue(array2));
 // result should be 2 (index of 9)
@@ -61,15 +62,9 @@ const people = [
 ]
 
 // write your function here
-const filterOverEightteen = (arr)=>{
 
-  return arr.filter((obj)=>{
- return (obj.age > 18)
-  })
-
-}
 // log the result
-console.log(filterOverEightteen(people));
+// console.log(filterOverEightteen(people));
 // result should be [{ name: 'Alice', age: 20 }, { name: 'Charlie', age: 25 }, { name: 'David', age: 30 }]
 
 console.log('===== End of Exercise 3 =====')
@@ -88,13 +83,9 @@ const students = [
 ]
 
 // write your function here
-const sortByScoreInDesc = (arr)=>{
-  return arr.sort((a,b)=>{
-return b.score - a.score;
-  })
-}
+
 // log the result
-console.log(sortByScoreInDesc(students));
+// console.log(sortByScoreInDesc(students));
 // result should be [{ name: 'Eve', score: 100 }, { name: 'Charlie', score: 95 }, { name: 'Alice', score: 90 }, { name: 'Bob', score: 85 }, { name: 'David', score: 80 }]
 
 console.log('===== End of Exercise 4 =====')
@@ -121,14 +112,10 @@ const students3 = [
 ]
 
 // write your function here
-  const everyStudentAbove50 = (arr)=>{
-   return arr.every((student)=>{
-      return (student.score > 50);
-    })
-  }
+  
 // log the result
-console.log(everyStudentAbove50(students2));
-console.log(everyStudentAbove50(students3));
+// console.log(everyStudentAbove50(students2));
+// console.log(everyStudentAbove50(students3));
 
 // result should be true for students2 and false for students3
 
