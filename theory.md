@@ -8,8 +8,7 @@
 - Functions
 - Objects
 
-<details>
-<summary>1. Data types in JS</summary>
+## 1. Data types in JS
 
 - Primitive data types
 - Non-primitive data types
@@ -38,19 +37,13 @@
 
 - Symbol, BigInt
 
-</details>
-
-<details>
-<summary>## 1.2 Non-primitive data types</summary>
+## 1.2 Non-primitive data types
 
 - In JS, if the data type is not primitive, it is non-primitive - Object
 
 - TBD
 
-</details>
-
-<details>
-<summary>## 2. Variables</summary>
+## 2. Variables
 
 - 3 ways to declare a variable:
 
@@ -75,10 +68,7 @@
   - Bitwise operators: &, |, ^, ~, <<, >>
   - Conditional (ternary) operator: ?:
 
-</details>
-
-<details>
-<summary>## 3. Conditional statements</summary>
+## 3. Conditional statements
 
 - If statement
 - If else statement
@@ -121,10 +111,7 @@ condition ? expression1 : expression2
 let isAdult = age >= 18 ? 'Adult' : 'Child'
 ```
 
-</details>
-
-<details>
-<summary>## 4. Loops</summary>
+## 4. Loops
 
 - For loop
 - While loop
@@ -144,10 +131,7 @@ do {
 } while (condition)
 ```
 
-</details>
-
-<details>
-<summary>## 5. Functions in JS</summary>
+## 5. Functions in JS
 
 ```javascript
 // 1. explicit function
@@ -173,10 +157,7 @@ const functionName = (parameter1, parameter2) => {
 - Function can be assigned to a variable
 - Function can be passed as an argument to another function
 
-</details>
-
-<details>
-<summary>## 6. Objects</summary>
+## 6. Objects
 
 - Object:
 
@@ -247,10 +228,7 @@ fruits.push('mango')
 console.log(fruits) // ['apple', 'banana', 'orange', 'mango']
 ```
 
-</details>
-
-<details>
-<summary>## 7. Deep dive into Array</summary>
+## 7. Deep dive into Array
 
 ### 7.1. Array methods
 
@@ -482,10 +460,7 @@ console.log(fruits) // ['apple', 'banana', 'orange', 'mango']
   console.log(persons)
   ```
 
-</details>
-
-<details>
-<summary>## 8. Callback</summary>
+## 8. Callback
 
 - Callback is a function that is passed as an argument (or a parameter) to another function
 
@@ -505,4 +480,76 @@ console.log(fruits) // ['apple', 'banana', 'orange', 'mango']
   sum(1, 2, (result) => {console.log(result)}) // 3
   ```
 
-## 9. ABC
+## 9. Deep dive into Array 2
+
+### 9.1. Map
+
+- Map is a method that creates a new array with the results of calling a provided function on every element in the array
+- Map does not change the original array
+- Map returns a new array with the same length as the original array
+- Callback function needs to return a value => this value will be added to the new array
+
+  ```javascript
+  const nums = [1, 2, 3, 4, 5]
+
+  const doubled = nums.map((num) => num * 2)
+  console.log(doubled) // [2, 4, 6, 8, 10]
+
+  const names = ['Chit', 'Nhung', 'Bim']
+
+  const uppercased = names.map((name) => name.toUpperCase())
+  console.log(uppercased) // ['CHIT', 'NHUNG', 'BIM']
+  ```
+
+- Why not use forEach instead of map?
+
+  - forEach does not return a new array
+  - forEach is used to loop through the array and do something with each element
+  - map is used to create a new array based on the original array
+
+### 9.2 Some vs Every
+
+- Some: check if at least one element satisfies the condition
+- Every: check if all elements satisfy the condition
+- Receive a callback function as an argument which returns a boolean value
+- Return a boolean value
+
+  ```javascript
+  const nums = [1, 2, 3, 4, 5]
+
+  const hasEven = nums.some((num) => num % 2 === 0)
+  console.log(hasEven) // true
+
+  const allEven = nums.every((num) => num % 2 === 0)
+  console.log(allEven) // false
+  ```
+
+### 9.3. Reduce
+
+- Reduce is a method that executes a reducer function on each element of the array, resulting in a single output value
+
+- Syntax
+
+  ```javascript
+  const result = array.reduce((accumulator, currentValueInTheLoop) => {
+    // do something with accumulator and currentValueInTheLoop
+    // return accumulator and this one becomes the new accumulator in the next iteration until the last element
+    // return accumulator
+  }, initialValueForAccumulator)
+  ```
+
+- Reduce takes 2 arguments: a reducer function and an initial value
+- The reducer function takes 4 arguments: accumulator, currentValue, currentIndex, array
+- The reducer function returns the accumulator
+
+  ```javascript
+  const nums = [1, 2, 3, 4, 5]
+
+  const sum = nums.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0,
+  )
+  console.log(sum) // 15
+  ```
+
+For more about array: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array>
