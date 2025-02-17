@@ -3,30 +3,40 @@
 // Exercise 1
 // Write a function use map to return an array of the square of each number in the array.
 
-console.log('===== Exercise 1 =====')
+console.log("===== Exercise 1 =====");
 
-const array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // write your function here
-
+const squareArray = (arr) => {
+  return arr.map((element) => element ** 2);
+};
 // log the result
+console.log(squareArray(array));
 // result should be [1, 4, 9, 16, 25, 36, 49, 64, 81]
 
-console.log('===== End of Exercise 1 =====')
+console.log("===== End of Exercise 1 =====");
 
 // Exercise 2
 // Write a function that takes an array and a number, return an array of the number multiplied by each element in the array.
 
-console.log('===== Exercise 2 =====')
+console.log("===== Exercise 2 =====");
 
-const array2 = [1, 3, 9, 2, 3, 4, 5, 8]
+const array2 = [1, 3, 9, 2, 3, 4, 5, 8];
 
 // write your function here
-
+const multipliedByNumber = (arr, num) => {
+  return arr.map((element) => {
+    return element * num;
+  });
+};
 // log the result
+console.log(multipliedByNumber(array2, 2));
+console.log(multipliedByNumber(array2, 3));
+
 // call the function with array2 and 3, result should be [3, 9, 27, 6, 9, 12, 15, 24]
 
-console.log('===== End of Exercise 2 =====')
+console.log("===== End of Exercise 2 =====");
 
 // Exercise 3
 // Write a function that takes an array of object person
@@ -34,22 +44,36 @@ console.log('===== End of Exercise 2 =====')
 // others who are younger than 18 should be return undefined.
 // after that, use filter to remove the undefined from the array.
 
-console.log('===== Exercise 3 =====')
+console.log("===== Exercise 3 =====");
 
 const people = [
-  { name: 'Alice', age: 20 },
-  { name: 'Bob', age: 15 },
-  { name: 'Charlie', age: 25 },
-  { name: 'David', age: 30 },
-  { name: 'Eve', age: 10 },
-]
+  { name: "Alice", age: 20 },
+  { name: "Bob", age: 15 },
+  { name: "Charlie", age: 25 },
+  { name: "David", age: 30 },
+  { name: "Eve", age: 10 },
+];
 
 // write your function here
-
+const newArray = (arr) => {
+  return arr
+    .map((element) => {
+      if (element.age > 18) {
+        return element.name;
+      }
+      if (element.age < 18) {
+        return undefined;
+      }
+    })
+    .filter((element) => {
+      return element !== undefined;
+    });
+};
 // log the result
+console.log(newArray(people));
 // result should be ['Alice', 'Charlie', 'David']
 
-console.log('===== End of Exercise 3 =====')
+console.log("===== End of Exercise 3 =====");
 
 /* ========================= HINTS =========================
 Exercise 1
