@@ -2,13 +2,16 @@
 
 function multiplyArray(arr, num) {
   // write your code here
+  return arr.map((element) => {
+    return element * num;
+  });
 }
 
 // Test cases for Exercise 1
-console.log(multiplyArray([1, 2, 3], 2)) // [2, 4, 6]
-console.log(multiplyArray([1, 2, 3], 3)) // [3, 6, 9]
-console.log(multiplyArray([1, 2, 3], 4)) // [4, 8, 12]
-console.log(multiplyArray([3, 4, 5], 2)) // [6, 8, 10]
+console.log(multiplyArray([1, 2, 3], 2)); // [2, 4, 6]
+console.log(multiplyArray([1, 2, 3], 3)); // [3, 6, 9]
+console.log(multiplyArray([1, 2, 3], 4)); // [4, 8, 12]
+console.log(multiplyArray([3, 4, 5], 2)); // [6, 8, 10]
 
 // Hint for Exercise 1:
 // You can use the map method to iterate over the array and multiply each element by the number
@@ -20,71 +23,81 @@ console.log(multiplyArray([3, 4, 5], 2)) // [6, 8, 10]
 
 function filterAndMultiply(arr, num) {
   // write your code here
+  return arr
+    .filter((element) => {
+      return element >= 0;
+    })
+    .map((element) => {
+      return element * num;
+    });
 }
 
 // Test cases for Exercise 2
-console.log(filterAndMultiply([1, -2, 3], 2)) // [2, 6]
-console.log(filterAndMultiply([-1, -2, -3], 2)) // []
-console.log(filterAndMultiply([-1, 2, 3], 2)) // [4, 6]
-console.log(filterAndMultiply([1, 2, 3], 2)) // [2, 4, 6]
+console.log(filterAndMultiply([1, -2, 3], 2)); // [2, 6]
+console.log(filterAndMultiply([-1, -2, -3], 2)); // []
+console.log(filterAndMultiply([-1, 2, 3], 2)); // [4, 6]
+console.log(filterAndMultiply([1, 2, 3], 2)); // [2, 4, 6]
 
 // Hint for Exercise 2:
 // You can use the filter() method to filter the negative numbers
 // and the map() method to multiply the positive numbers by the number
 
 // Exercise 3: create a function that takes an array of objects students, and a number
-// filter the students who have a grade less than the number
+// get the students who have a grade less than the number
 
-function filterBadStudents(students, grade) {
+function filterBadStudents(students, num) {
   // write your code here
+  return students.filter((student) => {
+    return student.grade < num;
+  });
 }
 
 // Test cases for Exercise 3
 console.log(
   filterBadStudents(
     [
-      { name: 'Alice', grade: 90 },
-      { name: 'Bob', grade: 60 },
+      { name: "Alice", grade: 90 },
+      { name: "Bob", grade: 60 },
     ],
-    70,
-  ),
-) // [{name: 'Bob', grade: 60}]
+    70
+  )
+);
 console.log(
   filterBadStudents(
     [
-      { name: 'Alice', grade: 90 },
-      { name: 'Bob', grade: 60 },
+      { name: "Alice", grade: 90 },
+      { name: "Bob", grade: 60 },
     ],
-    80,
-  ),
-) // [{name: 'Bob', grade: 60}]
+    80
+  )
+);
 console.log(
   filterBadStudents(
     [
-      { name: 'Alice', grade: 90 },
-      { name: 'Bob', grade: 60 },
+      { name: "Alice", grade: 90 },
+      { name: "Bob", grade: 60 },
     ],
-    50,
-  ),
-) // [{name: 'Alice', grade: 90}, {name: 'Bob', grade: 60}]
+    50
+  )
+); // []
 console.log(
   filterBadStudents(
     [
-      { name: 'Alice', grade: 90 },
-      { name: 'Bob', grade: 60 },
+      { name: "Alice", grade: 90 },
+      { name: "Bob", grade: 60 },
     ],
-    40,
-  ),
-) // [{name: 'Alice', grade: 90}, {name: 'Bob', grade: 60}]
+    40
+  )
+); // []
 console.log(
   filterBadStudents(
     [
-      { name: 'Alice', grade: 90 },
-      { name: 'Bob', grade: 60 },
+      { name: "Alice", grade: 90 },
+      { name: "Bob", grade: 60 },
     ],
-    100,
-  ),
-) // []
+    100
+  )
+); // [{name: 'Alice', grade: 90}, {name: 'Bob', grade: 60}]
 
 // Hint for Exercise 3:
 // You can use the filter() method to filter the students who have a grade less than the number
@@ -95,63 +108,66 @@ console.log(
 
 function checkIsEveryStudentGood(students, grade) {
   // write your code here
+  return students.every((student) => {
+    return student.grade > grade;
+  });
 }
 
 // Test cases for Exercise 4
 console.log(
   checkIsEveryStudentGood(
     [
-      { name: 'Alice', grade: 90 },
-      { name: 'Bob', grade: 60 },
+      { name: "Alice", grade: 90 },
+      { name: "Bob", grade: 60 },
     ],
-    70,
-  ),
-) // false
+    70
+  )
+); // false
 console.log(
   checkIsEveryStudentGood(
     [
-      { name: 'Alice', grade: 90 },
-      { name: 'Bob', grade: 60 },
+      { name: "Alice", grade: 90 },
+      { name: "Bob", grade: 60 },
     ],
-    60,
-  ),
-) // false
+    60
+  )
+); // false
 console.log(
   checkIsEveryStudentGood(
     [
-      { name: 'Alice', grade: 90 },
-      { name: 'Bob', grade: 60 },
+      { name: "Alice", grade: 90 },
+      { name: "Bob", grade: 60 },
     ],
-    50,
-  ),
-) // false
+    50
+  )
+); // true
 console.log(
   checkIsEveryStudentGood(
     [
-      { name: 'Alice', grade: 90 },
-      { name: 'Bob', grade: 60 },
+      { name: "Alice", grade: 90 },
+      { name: "Bob", grade: 60 },
     ],
-    40,
-  ),
-) // false
+    40
+  )
+); // true
 console.log(
   checkIsEveryStudentGood(
     [
-      { name: 'Alice', grade: 90 },
-      { name: 'Bob', grade: 60 },
+      { name: "Alice", grade: 90 },
+      { name: "Bob", grade: 60 },
     ],
-    100,
-  ),
-) // true
+    100
+  )
+); // false
 console.log(
   checkIsEveryStudentGood(
     [
-      { name: 'Alice', grade: 90 },
-      { name: 'Bob', grade: 60 },
+      { name: "Alice", grade: 90 },
+      { name: "Bob", grade: 60 },
     ],
-    0,
-  ),
-) // true
+    0
+  )
+); // true
 
 // Hint for Exercise 4:
 // You can use the every() method to check if every student has a grade greater than the number
@@ -163,45 +179,52 @@ console.log(
 
 function findEmployeeByName(employees, name) {
   // write your code here
+  const foundEmployee = employees.find((employee) => {
+    return employee.name.includes(name);
+  });
+  if (foundEmployee) {
+    return foundEmployee;
+  }
+  return "Not found";
 }
 
 // Test cases for Exercise 5
 console.log(
   findEmployeeByName(
     [
-      { name: 'Alice', age: 30 },
-      { name: 'Bob', age: 40 },
+      { name: "Alice", age: 30 },
+      { name: "Bob", age: 40 },
     ],
-    'Alice',
-  ),
-) // {name: 'Alice', age: 30}
+    "Alice"
+  )
+); // {name: 'Alice', age: 30}
 console.log(
   findEmployeeByName(
     [
-      { name: 'Alice', age: 30 },
-      { name: 'Bob', age: 40 },
+      { name: "Alice", age: 30 },
+      { name: "Bob", age: 40 },
     ],
-    'Bob',
-  ),
-) // {name: 'Bob', age: 40}
+    "Bob"
+  )
+); // {name: 'Bob', age: 40}
 console.log(
   findEmployeeByName(
     [
-      { name: 'Alice', age: 30 },
-      { name: 'Bob', age: 40 },
+      { name: "Alice", age: 30 },
+      { name: "Bob", age: 40 },
     ],
-    'Charlie',
-  ),
-) // null
+    "Charlie"
+  )
+); // 'not found'
 console.log(
   findEmployeeByName(
     [
-      { name: 'Alice', age: 30 },
-      { name: 'Bob', age: 40 },
+      { name: "Alice", age: 30 },
+      { name: "Bob", age: 40 },
     ],
-    'A',
-  ),
-) // {name: 'Alice', age: 30}
+    "A"
+  )
+); // {name: 'Alice', age: 30}
 
 // Hint for Exercise 5:
 // You can use the find() method to find the first employee who includes the string of name
