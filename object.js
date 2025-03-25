@@ -18,21 +18,21 @@ const person = {
 }
 
 const key = 'name'
-console.log(
-  `My girlfriend is ${person.girlfriend.name} and her age is ${person.girlfriend.age}`,
-)
-console.log(person[key])
-console.log(person['age'])
-console.log(person.greet())
-person.getInfo()
+// console.log(
+//   `My girlfriend is ${person.girlfriend.name} and her age is ${person.girlfriend.age}`,
+// )
+// console.log(person[key])
+// console.log(person['age'])
+// console.log(person.greet())
+// person.getInfo()
 person.name = 'bimbim'
 person.age = 32
-console.log(person.name)
-console.log(person.age)
+// console.log(person.name)
+// console.log(person.age)
 person.getInfo = (title) => {
   console.log(`My title is ${title}`)
 }
-person.getInfo('Mr')
+// person.getInfo('Mr')
 
 // Constructor
 const createPerson = (name, age) => {
@@ -42,12 +42,30 @@ const createPerson = (name, age) => {
   return obj
 }
 const firstPerson = createPerson('bim', 35)
-console.log(firstPerson)
+// console.log(firstPerson)
 const createPerson2 = (name, age, nameKey, ageKey) => {
-  const obj = {};
-  obj[nameKey] = name;
-  obj[ageKey] = age;
-  return obj;
+  const obj = {}
+  obj[nameKey] = name
+  obj[ageKey] = age
+  return obj
 }
 const secondPerson = createPerson2('chit', 10, 'ag', 'ageK')
-console.log(secondPerson)
+// console.log(secondPerson)
+
+const functionChangeArray = (arr) => {
+  arr.push(4)
+}
+
+const changeString = (string) => {
+  string = 'Hello'
+}
+
+const a = [1, 2, 3]
+console.log('before', a)
+functionChangeArray(a)
+console.log('after', a)
+
+let b = 'world'
+console.log('before', b)
+changeString(b)
+console.log('after', b)
