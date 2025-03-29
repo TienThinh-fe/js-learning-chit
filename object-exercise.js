@@ -10,7 +10,25 @@
 // - `stop`: a method that sets `isRunning` to fal
 
 // write you code here
+const car = {
+  make: 'bim',
+  model: 'peter',
+  year: 2025,
+  color: 'red',
+  isRunning: true,
+  start: function () {
+    this.isRunning = true
+  },
+  stop: function () {
+    this.isRunning = false
+  },
+}
 
+// console.log(car)
+// car.stop()
+// console.log(car.isRunning)
+// car.start()
+// console.log(car.isRunning)
 // hint:
 // - use this keyword to refer to the object itself
 
@@ -25,6 +43,22 @@
 // It should be a object constructor that takes `name`, `age`, `street`, `city`, and `country` as parameters and initializes the properties accordingly.
 
 // write you code here
+function Person(name, age, street, city, country) {
+  this.name = name
+  this.age = age
+  this.street = street
+  this.city = city
+  this.country = country
+  this.address = function () {
+    return `${this.street}, ${this.city}, ${this.country}`
+  }
+  this.greet = function () {
+    return `Hello, my name is ${this.name} and I am ${this.age} years old.`
+  }
+}
+const myPerson = new Person('Bim', 40, 'Hoang Dinh Ai', 'Da Nang', 'VietNam')
+// console.log(myPerson.address())
+// console.log(myPerson.greet())
 
 // hint:
 // - use this keyword to refer to the object itself
@@ -39,18 +73,24 @@
 // @param {Object} person - The person object
 // @param {string} person.name - The person's name
 // @param {number} person.age - The person's age
-function uppercaseNameAndAge(person) {}
+function uppercaseNameAndAge(person) {
+  const obj = {}
+
+  obj.name = person.name.toUpperCase()
+  obj.age = person.age + 1
+  return obj
+}
 
 // test cases for exercise 3
-// const person1 = {
-//   name: 'John',
-//   age: 25,
-// }
+const person1 = {
+  name: 'John',
+  age: 25,
+}
 
-// const person2 = {
-//   name: 'Jane',
-//   age: 30,
-// }
+const person2 = {
+  name: 'Jane',
+  age: 30,
+}
 
 // console.log(uppercaseNameAndAge(person1)) // Output: { name: 'JOHN', age: 26 }
 // console.log(uppercaseNameAndAge(person2)) // Output: { name: 'JANE', age: 31 }
@@ -65,29 +105,44 @@ function uppercaseNameAndAge(person) {}
 // - `company`: the name of the company
 // assuming that the person object has a property called `companyId` that corresponds to the `id` of the company object
 
-function mapPersonToCompany(persons, companies) {}
+function mapPersonToCompany(persons, companies) {
+  const personsWithCompanyName = persons.map((person) => {
+    const companyId = person.companyId
+    const foundCompany = companies.find((company) => {
+      return company.id === companyId
+    })
+    console.log(foundCompany)
+    return {
+      name: person.name,
+      age: person.age,
+      company: foundCompany.name,
+    }
+  })
+
+  return personsWithCompanyName
+}
 
 // test cases for exercise 4
-// const persons = [
-//   { name: 'John', age: 25, companyId: 1 },
-//   { name: 'Jane', age: 30, companyId: 2 },
-//   { name: 'Bob', age: 35, companyId: 1 },
-// ]
+const persons = [
+  { name: 'John', age: 25, companyId: 1 },
+  { name: 'Jane', age: 30, companyId: 2 },
+  { name: 'Bob', age: 35, companyId: 1 },
+]
 
-// const companies = [
-//   { id: 1, name: 'Company A' },
-//   { id: 2, name: 'Company B' },
-//   { id: 3, name: 'Company C' },
-// ]
+const companies = [
+  { id: 1, name: 'Company A' },
+  { id: 2, name: 'Company B' },
+  { id: 3, name: 'Company C' },
+]
 
-// const result = mapPersonToCompany(persons, companies)
-// console.log(result)
-// // Output:
-// // [
-// //   { name: 'John', age: 25, company: 'Company A' },
-// //   { name: 'Jane', age: 30, company: 'Company B' },
-// //   { name: 'Bob', age: 35, company: 'Company A' },
-// // ]
+const result = mapPersonToCompany(persons, companies)
+console.log(result)
+// Output:
+// [
+//   { name: 'John', age: 25, company: 'Company A' },
+//   { name: 'Jane', age: 30, company: 'Company B' },
+//   { name: 'Bob', age: 35, company: 'Company A' },
+// ]
 
 // hint:
 // - use map and find methods
