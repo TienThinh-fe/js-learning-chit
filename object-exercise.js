@@ -11,8 +11,8 @@
 
 // write you code here
 const car = {
-  make: 'bim',
-  model: 'peter',
+  make: 'Bom',
+  model: 'Bim',
   year: 2025,
   color: 'red',
   isRunning: true,
@@ -75,7 +75,6 @@ const myPerson = new Person('Bim', 40, 'Hoang Dinh Ai', 'Da Nang', 'VietNam')
 // @param {number} person.age - The person's age
 function uppercaseNameAndAge(person) {
   const obj = {}
-
   obj.name = person.name.toUpperCase()
   obj.age = person.age + 1
   return obj
@@ -106,20 +105,18 @@ const person2 = {
 // assuming that the person object has a property called `companyId` that corresponds to the `id` of the company object
 
 function mapPersonToCompany(persons, companies) {
-  const personsWithCompanyName = persons.map((person) => {
-    const companyId = person.companyId
+  return persons.map((person) => {
     const foundCompany = companies.find((company) => {
-      return company.id === companyId
+      return company.id === person.companyId
     })
-    console.log(foundCompany)
+    // console.log(foundCompany)
+
     return {
       name: person.name,
       age: person.age,
       company: foundCompany.name,
     }
   })
-
-  return personsWithCompanyName
 }
 
 // test cases for exercise 4
@@ -134,6 +131,10 @@ const companies = [
   { id: 2, name: 'Company B' },
   { id: 3, name: 'Company C' },
 ]
+
+const foundCompany = companies.find((company) => {
+  return (company.id = 1)
+})
 
 const result = mapPersonToCompany(persons, companies)
 console.log(result)
