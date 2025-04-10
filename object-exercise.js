@@ -133,7 +133,7 @@ const companies = [
 ]
 
 const foundCompany = companies.find((company) => {
-  return (company.id = 1)
+  return company.id === 1
 })
 
 const result = mapPersonToCompany(persons, companies)
