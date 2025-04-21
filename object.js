@@ -69,3 +69,65 @@ let b = 'world'
 console.log('before', b)
 changeString(b)
 console.log('after', b)
+
+console.log('-----')
+
+const personObj = {
+  name: 'Nhung',
+  age: 12,
+  address: 'QN',
+}
+
+for (let key in personObj) {
+  console.log(key)
+  console.log(personObj[key])
+}
+
+const personArr = [
+  {
+    name: 'Nhung',
+    age: 12,
+    address: 'QN',
+  },
+  {
+    name: 'Bim',
+    age: 24,
+    address: 'HN',
+  },
+]
+
+// console.log(personArr[0])
+
+for (let a in personArr) {
+  console.log(personArr[a])
+}
+
+for (let b of personArr) {
+  console.log(b.name)
+}
+
+const o = {
+  abc: 'b',
+  'abc cbd': 'c',
+  fun() {
+    console.log(1)
+  },
+}
+
+o.fun()
+o['fun']()
+
+// const key1 = 'abc'
+// const bim = 'abc cbd',
+
+// console.log(o['abc'])
+// console.log(o[bim])
+// console.log(o[abc])
+
+// const char = 'a'
+
+// console.log('a')
+// console.log(char)
+// console.log(a)
+
+// // console.log(o.abc)
