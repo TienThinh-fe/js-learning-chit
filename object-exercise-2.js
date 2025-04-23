@@ -5,17 +5,17 @@
 // Please fix the error
 
 // TODO: uncomment the code below before running
-// const person = {
-//   name: 'John',
+// let person = {
+//   name: "John",
 //   age: 25,
-// }
+// };
 
 // person = {
-//   name: 'Jane',
+//   name: "Jane",
 //   age: 30,
-// }
+// };
 
-// console.log(person.name) // Output: Jane
+// console.log(person.name); // Output: Jane
 
 // Exercise 2:
 // This below code has an error
@@ -23,48 +23,48 @@
 
 // TODO: uncomment the code below before running
 // const person = {
-//   name: 'John',
+//   name: "John",
 //   age: 25,
-//   greet: () => {
-//     console.log(`Hello, my name is ${this.name}`)
+//   greet: function () {
+//     console.log(`Hello, my name is ${this.name}`);
 //   },
-// }
+// };
 
-// person.greet() // Output: Hello, my name is undefined => it should be 'John'
+// person.greet(); // Output: Hello, my name is undefined => it should be 'John'
 
 // Exercise 3:
 // This below code has an error
 // Please fix the error
 
 // const obj = {
-//   key1: 'value1',
-//   'key 2': 'value 2'
-// }
+//   key1: "value1",
+//   "key 2": "value 2",
+// };
 
-// const k1 = 'key1'
-// const k2 = 'key 2'
+// const k1 = "key1";
+// const k2 = "key 2";
 
-// console.log(obj[key1]) // ReferenceError: key1 is not defined => please fix to log 'value1' to the console
-// console.log(obj['k2']) // undefined => please fix to log 'value 2' to the console
-// console.log(obj.k2) // undefined => please fix to log 'value 2' to the console
-// console.log(obj.k1) // undefined => please fix to log 'value1' to the console
+// console.log(obj["key1"]); // ReferenceError: key1 is not defined => please fix to log 'value1' to the console
+// console.log(obj[k2]); // undefined => please fix to log 'value 2' to the console
+// console.log(obj["key 2"]); // undefined => please fix to log 'value 2' to the console
+// console.log(obj[k1]); // undefined => please fix to log 'value1' to the console
 
 // Exercise 4:
 // This below code has an error
 // Please fix the error
 
 // const student = {
-//   name: 'John',
+//   name: "John",
 //   age: 20,
-//   subjects: ['Math', 'Science', 'History'],
-//   getDetails: () => {
+//   subjects: ["Math", "Science", "History"],
+//   getDetails: function () {
 //     return `${this.name} is ${
 //       this.age
-//     } years old and studies ${this.subjects.join(', ')}.`
+//     } years old and studies ${this.subjects.join(", ")}.`;
 //   },
-// }
+// };
 
-// console.log(student.getDetails()) // Error => it should be 'John is 20 years old and studies Math, Science, History.'
+// console.log(student.getDetails()); // Error => it should be 'John is 20 years old and studies Math, Science, History.'
 
 // Exercise 5:
 // Create an online shopping cart object with the following requirements:
@@ -79,31 +79,31 @@
 // 5. Make sure all methods use 'this' keyword correctly
 
 // TODO: Uncomment and complete the code below
-// const shoppingCart = {
-//   customerName: 'Alex',
-//   items: [],
-//   contactDetails: {
-//     email: 'alex@example.com',
-//     phone: '123-456-7890',
-//     address: '123 Main St'
-//   },
-//   // Add item method - should add an item to the items array
-//   addItem: function(name, price, quantity) {
-//     // Your code here
-//   },
-//   // Remove item method - should remove an item by name
-//   removeItem: function(name) {
-//     // Your code here
-//   },
-//   // Calculate total price method - should calculate total price of all items
-//   calculateTotal: function() {
-//     // Your code here
-//   },
-//   // Generate order summary method - should return a string with order details
-//   orderSummary: function() {
-//     // Your code here - include customer name, list of items, and total price
-//   }
-// };
+const shoppingCart = {
+  customerName: "Alex",
+  items: [],
+  contactDetails: {
+    email: "alex@example.com",
+    phone: "123-456-7890",
+    address: "123 Main St",
+  },
+  // Add item method - should add an item to the items array
+  addItem: function (name, price, quantity) {
+    // Your code here
+  },
+  // Remove item method - should remove an item by name
+  removeItem: function (name) {
+    // Your code here
+  },
+  // Calculate total price method - should calculate total price of all items
+  calculateTotal: function () {
+    // Your code here
+  },
+  // Generate order summary method - should return a string with order details
+  orderSummary: function () {
+    // Your code here - include customer name, list of items, and total price
+  },
+};
 
 // Test your implementation:
 // shoppingCart.addItem('Laptop', 999.99, 1);
