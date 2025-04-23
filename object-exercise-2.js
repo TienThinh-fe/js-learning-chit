@@ -65,3 +65,56 @@
 // }
 
 // console.log(student.getDetails()) // Error => it should be 'John is 20 years old and studies Math, Science, History.'
+
+// Exercise 5:
+// Create an online shopping cart object with the following requirements:
+// 1. It should have properties for customer name, items (array of objects), and contact details
+// 2. Each item in the items array should have name, price, and quantity properties
+// 3. Create methods to:
+//    - Add item to cart
+//    - Remove item from cart
+//    - Calculate total price
+//    - Generate an order summary
+// 4. Use both dot notation and bracket notation in your implementation
+// 5. Make sure all methods use 'this' keyword correctly
+
+// TODO: Uncomment and complete the code below
+// const shoppingCart = {
+//   customerName: 'Alex',
+//   items: [],
+//   contactDetails: {
+//     email: 'alex@example.com',
+//     phone: '123-456-7890',
+//     address: '123 Main St'
+//   },
+//   // Add item method - should add an item to the items array
+//   addItem: function(name, price, quantity) {
+//     // Your code here
+//   },
+//   // Remove item method - should remove an item by name
+//   removeItem: function(name) {
+//     // Your code here
+//   },
+//   // Calculate total price method - should calculate total price of all items
+//   calculateTotal: function() {
+//     // Your code here
+//   },
+//   // Generate order summary method - should return a string with order details
+//   orderSummary: function() {
+//     // Your code here - include customer name, list of items, and total price
+//   }
+// };
+
+// Test your implementation:
+// shoppingCart.addItem('Laptop', 999.99, 1);
+// shoppingCart.addItem('Headphones', 99.99, 2);
+// shoppingCart.addItem('Mouse', 29.99, 1);
+// console.log(shoppingCart.items); // Should show all added items
+// console.log(shoppingCart['calculateTotal']()); // Use bracket notation to call the method
+// shoppingCart.removeItem('Headphones');
+// console.log(shoppingCart.items); // Should show items without Headphones
+// console.log(shoppingCart.orderSummary()); // Should show a formatted order summary
+
+// Bonus Challenge:
+// Add a method to apply a discount to the total price
+// The method should take a discount percentage as parameter
