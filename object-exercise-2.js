@@ -90,14 +90,26 @@ const shoppingCart = {
   // Add item method - should add an item to the items array
   addItem: function (name, price, quantity) {
     // Your code here
+    this.items.push({
+      name: name,
+      price: price,
+      quantity: quantity,
+    });
   },
+
   // Remove item method - should remove an item by name
   removeItem: function (name) {
     // Your code here
+    this.items = this.items.filter((item) => {
+      return item.name !== name;
+    });
   },
   // Calculate total price method - should calculate total price of all items
   calculateTotal: function () {
     // Your code here
+    return this.items.reduce((acc, item) => {
+      return acc + item.price * item.quantity;
+    }, 0);
   },
   // Generate order summary method - should return a string with order details
   orderSummary: function () {
@@ -106,15 +118,18 @@ const shoppingCart = {
 };
 
 // Test your implementation:
-// shoppingCart.addItem('Laptop', 999.99, 1);
-// shoppingCart.addItem('Headphones', 99.99, 2);
-// shoppingCart.addItem('Mouse', 29.99, 1);
-// console.log(shoppingCart.items); // Should show all added items
-// console.log(shoppingCart['calculateTotal']()); // Use bracket notation to call the method
-// shoppingCart.removeItem('Headphones');
-// console.log(shoppingCart.items); // Should show items without Headphones
+shoppingCart.addItem("Laptop", 999.99, 1);
+shoppingCart.addItem("Headphones", 99.99, 2);
+shoppingCart.addItem("Mouse", 29.99, 1);
+console.log(shoppingCart.items); // Should show all added items
+console.log(shoppingCart["calculateTotal"]()); // Use bracket notation to call the method
+shoppingCart.removeItem("Headphones");
+console.log(shoppingCart.items); // Should show items without Headphones
 // console.log(shoppingCart.orderSummary()); // Should show a formatted order summary
 
 // Bonus Challenge:
 // Add a method to apply a discount to the total price
 // The method should take a discount percentage as parameter
+
+sum = 999.99 + 99.99 * 2 + 29.99;
+console.log(sum);
