@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Searching Exercise</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+
+    .highlight {
+      background-color: yellow;
+    }
+
+    .info-text {
+      color: blue;
+    }
+
+    .success {
+      color: green;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    #result-area {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      min-height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 id="main-title">DOM Searching Methods Exercise</h1>
+
+    <p class="info-text">This is a paragraph with the class "info-text".</p>
+    <p class="info-text highlight">This paragraph has both "info-text" and "highlight" classes.</p>
+
+    <div id="content-box">
+      <h2>Content Section</h2>
+      <p>This is a paragraph inside the content box.</p>
+      <span class="highlight">This is a highlighted span.</span>
+    </div>
+
+    <ul id="item-list">
+      <li class="list-item">Item 1</li>
+      <li class="list-item">Item 2</li>
+      <li class="list-item highlight">Item 3 (highlighted)</li>
+      <li class="list-item">Item 4</li>
+      <li class="list-item">Item 5</li>
+    </ul>
+
+    <div>
+      <h3>Links Section</h3>
+      <a href="https://www.example.com" class="link" target="_blank">Example Link</a>
+      <a href="https://www.google.com" class="link highlight" target="_blank">Google (highlighted)</a>
+      <a href="https://www.github.com" class="link" data-type="code">GitHub</a>
+    </div>
+
+    <form id="user-form">
+      <h3>User Form</h3>
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter username">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+          <option value="1">Category 1</option>
+          <option value="2">Category 2</option>
+          <option value="3">Category 3</option>
+        </select>
+      </div>
+      <button type="submit" class="btn success">Submit</button>
+    </form>
+
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-row">
+          <td>1</td>
+          <td>John Doe</td>
+          <td>john@example.com</td>
+        </tr>
+        <tr class="table-row highlight">
+          <td>2</td>
+          <td>Jane Smith</td>
+          <td>jane@example.com</td>
+        </tr>
+        <tr class="table-row">
+          <td>3</td>
+          <td>Bob Johnson</td>
+          <td>bob@example.com</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div id="nested-section">
+      <h3>Nested Elements</h3>
+      <div class="level-1">
+        <p>Level 1 paragraph</p>
+        <div class="level-2">
+          <p>Level 2 paragraph</p>
+          <div class="level-3 highlight">
+            <p>Level 3 paragraph (highlighted)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Results:</h3>
+    <div id="result-area"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

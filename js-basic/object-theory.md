@@ -158,3 +158,34 @@ obj.c.f() // 3
 obj.c.g() // 4
 obj.c.h() // undefined
 ```
+
+# Object destructuring
+
+- You can destructure an object to extract the properties and methods of the object
+
+```javascript
+const person = {
+  name: 'John',
+  age: 30,
+  address: {
+    city: 'New York',
+    state: 'NY',
+  },
+  greet() {
+    console.log(`Hello, my name is ${this.name}`)
+  },
+  children: {
+    name: 'Jane',
+    age: 5,
+  },
+}
+
+// using dot notation
+// const name = person.name
+
+// using destructuring
+const { name } = person // create a variable `name` and assign the value of `person.name` to it, the name of variable is must be same as the key in the object
+
+const { children } = person 
+const { name: childName } = children // create a variable `childName` and assign the value of children.name to it
+```
