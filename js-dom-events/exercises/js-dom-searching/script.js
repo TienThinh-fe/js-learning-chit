@@ -91,21 +91,21 @@ function runExercises() {
 
     // Find the content box
     // TODO: Find the content box element by its ID and store it in the contentBox variable
-    const contentBox = null;
+    const contentBox = document.getElementById("content-box");
     console.log("Content box:", contentBox);
     displayResult('getElementById("content-box")', contentBox);
 
     // Find the user form
     // TODO: Find the user form element by its ID and store it in the userForm variable
-    const userForm = null;
+    const userForm = document.getElementById("user-form");
     console.log("User form:", userForm);
     displayResult('getElementById("user-form")', userForm);
 
     // Try to find an element that doesn't exist
     // TODO: Try to find an element with an ID that doesn't exist in the document
-    const nonExistent = null;
+    const nonExistent = document.getElementById("Bim");
     console.log("Non-existent element:", nonExistent);
-    displayResult('getElementById("non-existent-id")', nonExistent);
+    displayResult('getElementById("non-existent-id")', nonExistent); // Output: "No element found???"
   }
 
   // Exercise 2: document.getElementsByClassName()
@@ -114,25 +114,25 @@ function runExercises() {
 
     // Find all elements with the 'highlight' class
     // TODO: Find all elements with the highlight class and store them in the highlightedElements variable
-    const highlightedElements = [];
+    const highlightedElements = document.getElementsByClassName("highlight");
     console.log("Highlighted elements:", highlightedElements);
     displayResult('getElementsByClassName("highlight")', highlightedElements);
 
     // Find all elements with the 'info-text' class
     // TODO: Find all elements with the info-text class and store them in the infoTextElements variable
-    const infoTextElements = [];
+    const infoTextElements = document.getElementsByClassName("info-text");
     console.log("Info text elements:", infoTextElements);
     displayResult('getElementsByClassName("info-text")', infoTextElements);
 
     // Find all elements with the 'link' class
     // TODO: Find all elements with the link class and store them in the linkElements variable
-    const linkElements = [];
+    const linkElements = document.getElementsByClassName("link");
     console.log("Link elements:", linkElements);
     displayResult('getElementsByClassName("link")', linkElements);
 
     // Try to find elements with a class that doesn't exist
     // TODO: Try to find elements with a class that doesn't exist in the document
-    const nonExistentClass = [];
+    const nonExistentClass = document.getElementsByClassName("Chit");
     console.log("Non-existent class elements:", nonExistentClass);
     displayResult(
       'getElementsByClassName("non-existent-class")',
