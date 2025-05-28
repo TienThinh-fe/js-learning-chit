@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation Exercise</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .show-btn {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .hide-btn {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .alert {
+      width: 100%;
+      padding: 15px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .alert-success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .alert-warning {
+      background-color: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeeba;
+    }
+
+    .alert-danger {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    .alert-info {
+      background-color: #d1ecf1;
+      color: #0c5460;
+      border: 1px solid #bee5eb;
+    }
+
+    .alert-content {
+      flex-grow: 1;
+    }
+
+    .task-instructions {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-left: 5px solid #007bff;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="task-instructions">
+      <h1>DOM Manipulation Exercise</h1>
+      <p>In this exercise, you will practice using DOM manipulation methods including:</p>
+      <ul>
+        <li><code>createElement</code> - Create a new alert element</li>
+        <li><code>innerHTML</code> - Set HTML content for the alert</li>
+        <li><code>innerText</code> - Set text content for elements</li>
+        <li><code>setAttribute</code> - Add classes to elements</li>
+        <li><code>append</code> - Add the alert to the page</li>
+        <li><code>remove</code> - Remove the alert from the page</li>
+      </ul>
+      <p>Follow the TODO comments in the JavaScript file to complete this exercise.</p>
+    </div>
+
+    <div class="button-group">
+      <button class="show-btn" id="showAlert">Show Alert</button>
+      <button class="hide-btn" id="hideAlert">Hide Alert</button>
+    </div>
+
+    <!-- TODO: Create a container div for alerts with id 'alertContainer' -->
+
+    <!-- 
+        The alert structure should look like this when created by JavaScript:
+        <div class="alert alert-success">
+            <div class="alert-content">
+                <strong>Success!</strong> This is an alert message.
+            </div>
+            <button>×</button>
+        </div>
+        -->
+  </div>
+
+  <!-- TODO: add script file below -->
+
+</body>
+
+</html>
