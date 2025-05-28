@@ -148,3 +148,85 @@ console.log(elements) // Output: NodeList(3) [p.myClass, p.myClass, p.myClass]
 const firstElement = elements[0]
 console.log(firstElement) // Output: <p class="myClass">Hello, World!</p>
 ```
+
+## CSS Selectors
+
+- CSS selectors are patterns used to select elements in an HTML document.
+- They are used in various methods like `querySelector()` and `querySelectorAll()` to find elements based on their attributes, classes, IDs, and more.
+
+- Common CSS selectors include:
+
+  - **Type Selector**: Selects elements by their tag name (e.g., `div`, `p`, `h1`).
+  - **Class Selector**: Selects elements by their class name (e.g., `.myClass`).
+  - **ID Selector**: Selects an element by its ID (e.g., `#myId`).
+  - **Attribute Selector**: Selects elements based on their attributes (e.g., `[type="text"]`).
+  - **Descendant Selector**: Selects elements that are descendants of a specified element (e.g., `div p`).
+  - **Child Selector**: Selects elements that are direct children of a specified element (e.g., `div > p`).
+  - **Adjacent Sibling Selector**: Selects an element that is immediately after another specified element (e.g., `h1 + p`).
+  - **General Sibling Selector**: Selects all siblings of a specified element (e.g., `h1 ~ p`).
+
+- Example:
+
+```html
+<div class="container">
+  <h1>Title</h1>
+  <p class="myClass">Hello, World!</p>
+  <p class="myClass">Hello, Universe!</p>
+  <div id="myDiv">
+    <p>Hello, Galaxy!</p>
+  </div>
+
+  <a href="https://example.com">Example Link</a>
+  <a href="https://example.org">Example Link 2</a>
+</div>
+
+<form action="submit">
+  <input type="text" name="username" />
+  <input type="password" name="password" />
+  <button type="submit">Submit</button>
+</form>
+```
+
+```javascript
+// Type selector
+const elements1 = document.querySelectorAll('p')
+console.log(elements1) // Output: NodeList(3) [p.myClass, p.myClass, p]
+
+// Class selector
+const elements2 = document.querySelectorAll('.myClass')
+console.log(elements2) // Output: NodeList(2) [p.myClass, p.myClass]
+
+// ID selector
+const elements3 = document.querySelectorAll('#myDiv')
+console.log(elements3) // Output: NodeList(1) [div#myDiv]
+
+// Attribute selector
+const elements4 = document.querySelectorAll('input[type="text"]')
+console.log(elements4) // Output: NodeList(1) [input[type="text"]]
+
+// Descendant selector
+const elements5 = document.querySelectorAll('.container p')
+console.log(elements5) // Output: NodeList(3) [p.myClass, p.myClass, p]
+
+// Child selector
+const elements6 = document.querySelectorAll('.container > p')
+console.log(elements6) // Output: NodeList(2) [p.myClass, p.myClass]
+
+// Adjacent sibling selector
+const elements7 = document.querySelectorAll('h1 + p')
+console.log(elements7) // Output: NodeList(1) [p.myClass]
+
+// General sibling selector
+const elements8 = document.querySelectorAll('h1 ~ p')
+console.log(elements8) // Output: NodeList(2) [p.myClass, p.myClass]
+```
+
+## Summary
+
+- The `document` object is the entry point to the DOM and provides methods to access and manipulate elements.
+  - `document.getElementById()`: Selects an element by its unique ID.
+  - `document.getElementsByClassName()`: Selects elements by their class name.
+  - `document.getElementsByTagName()`: Selects elements by their tag name.
+  - `document.querySelector()`: Selects the first element that matches a CSS selector.
+  - `document.querySelectorAll()`: Selects all elements that match a CSS selector.
+  - CSS selectors are patterns used to select elements in an HTML document.
