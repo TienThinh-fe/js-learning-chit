@@ -146,31 +146,31 @@ function runExercises() {
 
     // Find all paragraph elements
     // TODO: Find all paragraph elements and store them in the paragraphs variable
-    const paragraphs = [];
+    const paragraphs = document.getElementsByTagName("p");
     console.log("Paragraphs:", paragraphs);
     displayResult('getElementsByTagName("p")', paragraphs);
 
     // Find all div elements
     // TODO: Find all div elements and store them in the divs variable
-    const divs = [];
+    const divs = document.getElementsByTagName("div");
     console.log("Divs:", divs);
     displayResult('getElementsByTagName("div")', divs);
 
     // Find all anchor elements
     // TODO: Find all anchor elements and store them in the anchors variable
-    const anchors = [];
+    const anchors = document.getElementsByTagName("a");
     console.log("Anchors:", anchors);
     displayResult('getElementsByTagName("a")', anchors);
 
     // Find all input elements
     // TODO: Find all input elements and store them in the inputs variable
-    const inputs = [];
+    const inputs = document.getElementsByTagName("input");
     console.log("Inputs:", inputs);
     displayResult('getElementsByTagName("input")', inputs);
 
     // Find all table rows
     // TODO: Find all table row elements and store them in the rows variable
-    const rows = [];
+    const rows = document.getElementsByTagName("tr");
     console.log("Table rows:", rows);
     displayResult('getElementsByTagName("tr")', rows);
   }
@@ -181,49 +181,49 @@ function runExercises() {
 
     // Find the first paragraph with class 'info-text'
     // TODO: Find the first paragraph with the info-text class using querySelector
-    const firstInfoText = null;
+    const firstInfoText = document.querySelector(".info-text");
     console.log("First info-text paragraph:", firstInfoText);
     displayResult('querySelector("p.info-text")', firstInfoText);
 
     // Find the first link with attribute target="_blank"
     // TODO: Find the first link with target="_blank" attribute using querySelector
-    const externalLink = null;
+    const externalLink = document.querySelector('a[target="_blank"]');
     console.log("First external link:", externalLink);
     displayResult('querySelector("a[target=\\"_blank\\"]")', externalLink);
 
     // Find the first element with both 'info-text' and 'highlight' classes
     // TODO: Find the first element with both info-text and highlight classes
-    const highlightedInfo = null;
+    const highlightedInfo = document.querySelector(".info-text.highlight");
     console.log("First highlighted info:", highlightedInfo);
     displayResult('querySelector(".info-text.highlight")', highlightedInfo);
 
     // Find the first paragraph inside the content box
     // TODO: Find the first paragraph inside the content box using querySelector
-    const contentBoxPara = null;
+    const contentBoxPara = document.querySelector("#content-box");
     console.log("First paragraph in content box:", contentBoxPara);
     displayResult('querySelector("#content-box p")', contentBoxPara);
 
     // Find the first highlighted list item
     // TODO: Find the first list item with the highlight class
-    const highlightedListItem = null;
+    const highlightedListItem = document.querySelector("li.highlight");
     console.log("First highlighted list item:", highlightedListItem);
     displayResult('querySelector("li.highlight")', highlightedListItem);
 
     // Find the submit button
     // TODO: Find the submit button using querySelector
-    const submitButton = null;
+    const submitButton = document.querySelector('button[type="submit"]');
     console.log("Submit button:", submitButton);
     displayResult('querySelector("button[type=\\"submit\\"]")', submitButton);
 
     // Find the first table cell in the highlighted row
     // TODO: Find the first table cell in the highlighted row
-    const cellInHighlightedRow = null;
+    const cellInHighlightedRow = document.querySelector("tr.highlight");
     console.log("First cell in highlighted row:", cellInHighlightedRow);
     displayResult('querySelector("tr.highlight td")', cellInHighlightedRow);
 
     // Find the deepest nested paragraph
     // TODO: Find the paragraph inside the deepest nested element
-    const deepestParagraph = null;
+    const deepestParagraph = document.querySelector(".level-3 p");
     console.log("Deepest nested paragraph:", deepestParagraph);
     displayResult('querySelector(".level-3 p")', deepestParagraph);
   }
@@ -234,37 +234,37 @@ function runExercises() {
 
     // Find all paragraphs with class 'info-text'
     // TODO: Find all paragraphs with the info-text class
-    const allInfoTexts = [];
+    const allInfoTexts = document.querySelectorAll(".info-text");
     console.log("All info-text paragraphs:", allInfoTexts);
     displayResult('querySelectorAll("p.info-text")', allInfoTexts);
 
     // Find all elements with the 'highlight' class
     // TODO: Find all elements with the highlight class
-    const allHighlightedElements = [];
+    const allHighlightedElements = document.querySelectorAll(".highlight");
     console.log("All highlighted elements:", allHighlightedElements);
     displayResult('querySelectorAll(".highlight")', allHighlightedElements);
 
     // Find all links
     // TODO: Find all anchor elements in the document
-    const allLinks = [];
+    const allLinks = document.querySelectorAll("a");
     console.log("All links:", allLinks);
     displayResult('querySelectorAll("a")', allLinks);
 
     // Find all input elements inside the form
     // TODO: Find all input elements inside the form
-    const formInputs = [];
+    const formInputs = document.querySelectorAll("input");
     console.log("All form inputs:", formInputs);
     displayResult('querySelectorAll("#user-form input")', formInputs);
 
     // Find all table cells
     // TODO: Find all table cells in the document
-    const allCells = [];
+    const allCells = document.querySelectorAll("td");
     console.log("All table cells:", allCells);
     displayResult('querySelectorAll("td")', allCells);
 
     // Find all paragraphs inside any level of nesting
     // TODO: Find all paragraphs inside the nested section
-    const allNestedParagraphs = [];
+    const allNestedParagraphs = document.querySelectorAll("#nested-section p");
     console.log("All nested paragraphs:", allNestedParagraphs);
     displayResult('querySelectorAll("#nested-section p")', allNestedParagraphs);
   }
