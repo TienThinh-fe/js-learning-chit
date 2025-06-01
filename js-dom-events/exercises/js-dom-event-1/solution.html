@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator - Solution</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calculator-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .buttons-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .operation-btn {
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .add-btn {
+            background: #4CAF50;
+        }
+
+        .subtract-btn {
+            background: #f44336;
+        }
+
+        .multiply-btn {
+            background: #FF9800;
+        }
+
+        .divide-btn {
+            background: #2196F3;
+        }
+
+        .operation-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .operation-btn:active {
+            transform: translateY(0);
+        }
+
+        .result-container {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .result-label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .result-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            min-height: 30px;
+        }
+
+        .solution-note {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .solution-note h3 {
+            color: #155724;
+            margin-bottom: 10px;
+        }
+
+        .solution-note p {
+            color: #155724;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>🧮 Simple Calculator - Solution</h1>
+        
+        <div class="solution-note">
+            <h3>Complete Solution</h3>
+            <p>• Input fields properly labeled and connected</p>
+            <p>• All operations working with event listeners</p>
+            <p>• Input validation and error handling</p>
+            <p>• Keyboard support (press Enter after typing)</p>
+        </div>
+
+        <!-- Solution: First input field -->
+        <div class="input-group">
+            <label for="firstNumber">First Number:</label>
+            <input type="number" id="firstNumber" name="firstNumber" placeholder="Enter first number">
+        </div>
+
+        <!-- Solution: Second input field -->
+        <div class="input-group">
+            <label for="secondNumber">Second Number:</label>
+            <input type="number" id="secondNumber" name="secondNumber" placeholder="Enter second number">
+        </div>
+
+        <div class="buttons-container">
+            <button class="operation-btn add-btn" id="addBtn">+</button>
+            <button class="operation-btn subtract-btn" id="subtractBtn">-</button>
+            <button class="operation-btn multiply-btn" id="multiplyBtn">×</button>
+            <button class="operation-btn divide-btn" id="divideBtn">÷</button>
+        </div>
+
+        <div class="result-container">
+            <div class="result-label">Result:</div>
+            <div class="result-value" id="result">Click a button to calculate</div>
+        </div>
+    </div>
+
+    <script src="solution.js"></script>
+</body>
+</html>

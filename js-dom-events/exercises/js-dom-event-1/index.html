@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator - DOM Events Exercise</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calculator-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .buttons-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .operation-btn {
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .add-btn {
+            background: #4CAF50;
+        }
+
+        .subtract-btn {
+            background: #f44336;
+        }
+
+        .multiply-btn {
+            background: #FF9800;
+        }
+
+        .divide-btn {
+            background: #2196F3;
+        }
+
+        .operation-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .operation-btn:active {
+            transform: translateY(0);
+        }
+
+        .result-container {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .result-label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .result-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            min-height: 30px;
+        }
+
+        .instructions {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .instructions h3 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+
+        .instructions ul {
+            color: #555;
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator-container">
+        <h1>🧮 Simple Calculator</h1>
+
+        <div class="instructions">
+            <h3>Instructions for Students:</h3>
+            <ul>
+                <li>Create two number input fields with proper labels</li>
+                <li>Use meaningful IDs and names for the inputs</li>
+                <li>Add event listeners to the operation buttons</li>
+                <li>Implement the calculation logic in JavaScript</li>
+                <li>Display the result in the result area</li>
+            </ul>
+        </div>
+
+        <!-- TODO: Create the first input field for the first number
+             - Use <label> tag with 'for' attribute pointing to input's id
+             - Use <input> tag with:
+               * type="number" 
+               * id="firstNumber" (or similar descriptive name)
+               * name="firstNumber" 
+               * placeholder="Enter first number"
+             - Wrap both label and input in a div with class="input-group"
+        -->
+
+        <!-- TODO: Create the second input field for the second number
+             - Follow the same pattern as the first input
+             - Use different id and name (e.g., "secondNumber")
+             - Use appropriate placeholder text
+        -->
+
+        <div class="buttons-container">
+            <button class="operation-btn add-btn" id="addBtn">+</button>
+            <!-- TODO: add a button for subtraction, multiplication, and division
+                 - Use class "operation-btn" for styling, and a specific class for each operation
+                 - Use unique IDs like "subtractBtn", "multiplyBtn", "divideBtn"
+                 - Use appropriate text for each button (e.g., "-", "*", "/")
+            -->
+        </div>
+
+        <div class="result-container">
+            <div class="result-label">Result:</div>
+            <div class="result-value" id="result">Click a button to calculate</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
