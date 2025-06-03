@@ -176,13 +176,20 @@
                * placeholder="Enter first number"
              - Wrap both label and input in a div with class="input-group"
         -->
+                <div class="input-group">
+                    <label for="firstNumber">First Number:</label>
+                    <input type="number" id="firstNumber" name="firstNumber" placeholder="Enter first number">
 
+                </div>
         <!-- TODO: Create the second input field for the second number
              - Follow the same pattern as the first input
              - Use different id and name (e.g., "secondNumber")
              - Use appropriate placeholder text
         -->
-
+        <div class="input-group">
+            <label for="secondNumber">Second Number:</label>
+            <input type="number" id="secondNumber" name="secondNumber" placeholder="Enter second number">
+        </div>
         <div class="buttons-container">
             <button class="operation-btn add-btn" id="addBtn">+</button>
             <!-- TODO: add a button for subtraction, multiplication, and division
@@ -190,6 +197,11 @@
                  - Use unique IDs like "subtractBtn", "multiplyBtn", "divideBtn"
                  - Use appropriate text for each button (e.g., "-", "*", "/")
             -->
+            <button class="operation-btn subtract-btn" id="subtractBtn">-</button>
+            <button class="operation-btn multiply-btn" id="multiplyBtn">x</button>
+            <button class="operation-btn divide-btn" id="divideBtn">/</button>
+
+
         </div>
 
         <div class="result-container">
@@ -199,6 +211,7 @@
     </div>
 
     <script src="script.js"></script>
+    
 </body>
 
 </html>
