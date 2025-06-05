@@ -1,4 +1,4 @@
-const button = document.getElementById("myButton");
+// const button = document.getElementById("myButton");
 // button.addEventListener("click", function () {
 //   //   alert("You clicked the button");
 //   const newParagraph = document.createElement("p");
@@ -40,6 +40,29 @@ const button = document.getElementById("myButton");
 //   console.log("value of input", input.value);
 // });
 
-button.addEventListener("click", function () {
-  this.innerText = "Oops";
+// button.addEventListener("click", function () {
+//   if (this.innerText === "ON") {
+//     this.innerText = "OFF";
+//   } else this.innerText = "ON";
+// });
+
+// one input, one button, when clicking on the button, show alert:"Hello {text in the input}"
+
+const buttonElement = document.getElementById("myButton");
+const inputElement = document.getElementById("myInput");
+
+buttonElement.addEventListener("click", function () {
+  if (inputElement.value === "") {
+    const errorMsg = document.createElement("p");
+    errorMsg.innerText = "Please input a name!";
+    const body = document.querySelector("body");
+    body.append(errorMsg);
+  } else alert(`HELLO ${inputElement.value}`);
+});
+// if the input is empty -> show the paragraph"Please input a name!"
+
+// if the input has a value -> remove the error message.
+inputElement.addEventListener("input", function () {
+  const errorMsg = document.querySelector("p");
+  errorMsg.remove();
 });
