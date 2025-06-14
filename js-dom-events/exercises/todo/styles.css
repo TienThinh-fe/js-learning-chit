@@ -1,0 +1,15 @@
+.todo-item button {
+    margin-left: 20px;
+}
+.todo-item {
+    margin-top: 16px;
+}
+.todo-high {
+    background-color: red;
+}
+.todo-medium {
+    background-color: yellow;
+}
+.todo-low {
+    background-color: #587ec4;
+}
