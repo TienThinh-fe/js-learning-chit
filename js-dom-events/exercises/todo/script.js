@@ -71,5 +71,3 @@ jobNameInput.addEventListener('input', () => {
 // input validation, empty, min length = 2,
 // special character -> error message.
 // default value for 'dueDate' = current time.
-
-console.log(123)
