@@ -1,15 +1,29 @@
 .todo-item button {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 .todo-item {
-    margin-top: 16px;
+  margin-top: 16px;
 }
 .todo-high {
-    background-color: red;
+  background-color: red;
 }
 .todo-medium {
-    background-color: yellow;
+  background-color: yellow;
 }
 .todo-low {
-    background-color: #587ec4;
+  background-color: #587ec4;
+}
+.todo-input-field {
+  margin-top: 16px;
+}
+.todo-input-field label {
+  display: inline-block;
+  width: 100px;
+}
+.todo-input-field input,
+.todo-input-field select {
+  width: 100px;
+}
+#add {
+  margin-top: 16px;
 }
