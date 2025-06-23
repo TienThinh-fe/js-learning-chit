@@ -4,6 +4,9 @@ const list = document.getElementById('list')
 const dateInput = document.getElementById('dueDate')
 const prioritySelect = document.getElementById('priority')
 const errorMessageEle = document.getElementById('errorMessage')
+const confirmationDialog = document.getElementById('confirmationDialog')
+const cancelDeleteBtn = document.getElementById('cancelDeleteBtn')
+const confirmDeleteBtn = document.getElementById('confirmDeleteBtn')
 
 export {
   jobNameInput,
@@ -12,4 +15,7 @@ export {
   dateInput,
   prioritySelect,
   errorMessageEle,
+  confirmationDialog,
+  cancelDeleteBtn,
+  confirmDeleteBtn,
 }

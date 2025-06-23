@@ -27,3 +27,11 @@
 #add {
   margin-top: 16px;
 }
+.confirmation {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+.confirmation .confirmation__cancel {
+  margin-right: 12px;
+}

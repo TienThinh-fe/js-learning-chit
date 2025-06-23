@@ -5,10 +5,12 @@ import {
   dateInput,
   prioritySelect,
   errorMessageEle,
+  confirmationDialog,
+  cancelDeleteBtn,
+  confirmDeleteBtn,
 } from './elements.js'
 import { formatDate } from './utils.js'
 import { getPriorityClass } from './utils.js'
-import { deleteBtn } from './delete-button.js'
 
 window.addEventListener('load', () => {
   jobNameInput.focus()
@@ -40,8 +42,18 @@ addBtn.addEventListener('click', function () {
 
   listItem.setAttribute('class', getPriorityClass(priority))
 
+  const deleteBtn = document.createElement('button')
+
+  deleteBtn.innerText = 'Delete'
+
   deleteBtn.addEventListener('click', function () {
+    confirmationDialog.showModal()
+  })
+
+  confirmDeleteBtn.addEventListener('click', () => {
+    // issue: when clicking on 'I'm sure' button -> all the items are removed from the lists
     listItem.remove()
+    confirmationDialog.close()
   })
 
   listItem.append(deleteBtn)
@@ -52,4 +64,8 @@ addBtn.addEventListener('click', function () {
 
 jobNameInput.addEventListener('input', () => {
   errorMessageEle.innerText = ''
+})
+
+cancelDeleteBtn.addEventListener('click', () => {
+  confirmationDialog.close()
 })
