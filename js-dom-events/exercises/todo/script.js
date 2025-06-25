@@ -17,6 +17,8 @@ window.addEventListener('load', () => {
   dateInput.valueAsDate = new Date()
 })
 
+let deleteItem = null
+
 addBtn.addEventListener('click', function () {
   if (jobNameInput.value === '') {
     errorMessageEle.innerText = 'Please input a valid item!'
@@ -47,13 +49,8 @@ addBtn.addEventListener('click', function () {
   deleteBtn.innerText = 'Delete'
 
   deleteBtn.addEventListener('click', function () {
+    deleteItem = listItem
     confirmationDialog.showModal()
-  })
-
-  confirmDeleteBtn.addEventListener('click', () => {
-    // issue: when clicking on 'I'm sure' button -> all the items are removed from the lists
-    listItem.remove()
-    confirmationDialog.close()
   })
 
   listItem.append(deleteBtn)
@@ -69,3 +66,16 @@ jobNameInput.addEventListener('input', () => {
 cancelDeleteBtn.addEventListener('click', () => {
   confirmationDialog.close()
 })
+
+confirmDeleteBtn.addEventListener('click', () => {
+  // issue: when clicking on 'I'm sure' button -> all the items are removed from the lists
+  if (deleteItem) {
+    deleteItem.remove()
+    deleteItem = null
+  }
+  confirmationDialog.close()
+})
+
+// Why the old code delete all the items when click on the confirmationDeleteBtn
+// How we can fix that
+// How the delete can know exact which item is click but the Dialog not?
