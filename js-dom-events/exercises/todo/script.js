@@ -12,6 +12,9 @@ import {
 import { formatDate } from './utils.js'
 import { getPriorityClass } from './utils.js'
 
+// Variable to track which item should be deleted (selected item)
+let itemToDelete = null
+
 window.addEventListener('load', () => {
   jobNameInput.focus()
   dateInput.valueAsDate = new Date()
@@ -43,23 +46,27 @@ addBtn.addEventListener('click', function () {
   listItem.setAttribute('class', getPriorityClass(priority))
 
   const deleteBtn = document.createElement('button')
-
   deleteBtn.innerText = 'Delete'
 
   deleteBtn.addEventListener('click', function () {
+    // Store reference to the item that should be deleted
+    itemToDelete = listItem
     confirmationDialog.showModal()
-  })
-
-  confirmDeleteBtn.addEventListener('click', () => {
-    // issue: when clicking on 'I'm sure' button -> all the items are removed from the lists
-    listItem.remove()
-    confirmationDialog.close()
   })
 
   listItem.append(deleteBtn)
   list.append(listItem)
 
   jobNameInput.value = ''
+})
+
+// Move this outside - only one event listener for confirm delete
+confirmDeleteBtn.addEventListener('click', () => {
+  if (itemToDelete) {
+    itemToDelete.remove()
+    itemToDelete = null // Reset the reference
+  }
+  confirmationDialog.close()
 })
 
 jobNameInput.addEventListener('input', () => {
