@@ -8,6 +8,8 @@ import {
   confirmationDialog,
   cancelDeleteBtn,
   confirmDeleteBtn,
+  cancelEditBtn,
+  editDialog,
 } from './elements.js'
 import { formatDate } from './utils.js'
 import { getPriorityClass } from './utils.js'
@@ -44,6 +46,14 @@ addBtn.addEventListener('click', function () {
 
   listItem.setAttribute('class', getPriorityClass(priority))
 
+  const editBtn = document.createElement('button')
+
+  editBtn.innerText = 'Edit'
+
+  editBtn.addEventListener('click', () => {
+    editDialog.showModal()
+  })
+
   const deleteBtn = document.createElement('button')
 
   deleteBtn.innerText = 'Delete'
@@ -54,6 +64,7 @@ addBtn.addEventListener('click', function () {
   })
 
   listItem.append(deleteBtn)
+  listItem.append(editBtn)
   list.append(listItem)
 
   jobNameInput.value = ''
@@ -68,7 +79,6 @@ cancelDeleteBtn.addEventListener('click', () => {
 })
 
 confirmDeleteBtn.addEventListener('click', () => {
-  // issue: when clicking on 'I'm sure' button -> all the items are removed from the lists
   if (deleteItem) {
     deleteItem.remove()
     deleteItem = null
@@ -76,6 +86,6 @@ confirmDeleteBtn.addEventListener('click', () => {
   confirmationDialog.close()
 })
 
-// Why the old code delete all the items when click on the confirmationDeleteBtn
-// How we can fix that
-// How the delete can know exact which item is click but the Dialog not?
+cancelEditBtn.addEventListener('click', () => {
+  editDialog.close()
+})

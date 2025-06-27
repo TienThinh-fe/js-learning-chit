@@ -7,6 +7,12 @@ const errorMessageEle = document.getElementById('errorMessage')
 const confirmationDialog = document.getElementById('confirmationDialog')
 const cancelDeleteBtn = document.getElementById('cancelDeleteBtn')
 const confirmDeleteBtn = document.getElementById('confirmDeleteBtn')
+const editDialog = document.getElementById('editDialog')
+const cancelEditBtn = document.getElementById('cancelEditBtn')
+
+const jobNameEditInput = document.getElementById('jobNameEdit')
+const dateEditInput = document.getElementById('dueDateEdit')
+const priorityEditSelect = document.getElementById('priorityEdit')
 
 export {
   jobNameInput,
@@ -18,4 +24,9 @@ export {
   confirmationDialog,
   cancelDeleteBtn,
   confirmDeleteBtn,
+  jobNameEditInput,
+  dateEditInput,
+  priorityEditSelect,
+  editDialog,
+  cancelEditBtn,
 }

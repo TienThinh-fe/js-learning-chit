@@ -41,6 +41,35 @@
             <button id="confirmDeleteBtn">I'm sure</button>
         </div>
     </dialog>
+    <dialog id="editDialog">
+        <span>Edit</span>
+
+        <div class="todo-input-field">
+            <label for="jobNameEdit">Job Name:</label>
+            <input id="jobNameEdit">
+        </div>
+
+        <div class="todo-input-field">
+            <label for="dueDateEdit">Due Date:</label>
+            <input type="date" id="dueDateEdit" name="dueDateEdit">
+        </div>
+
+        <div class="todo-input-field">
+            <label for="priorityEdit">Priority:</label>
+            <select id="priorityEdit" name="priorityEdit">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+        </div>
+
+        <div class="confirmation">
+            <button id="cancelEditBtn" class="confirmation__cancel">Cancel</button>
+            <button id="saveEditBtn">Save</button>
+        </div>
+
+    </dialog>
+
 
     <script type="module" src="script.js"></script>
 </body>
