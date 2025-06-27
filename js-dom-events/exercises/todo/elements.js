@@ -9,6 +9,7 @@ const cancelDeleteBtn = document.getElementById('cancelDeleteBtn')
 const confirmDeleteBtn = document.getElementById('confirmDeleteBtn')
 const editDialog = document.getElementById('editDialog')
 const cancelEditBtn = document.getElementById('cancelEditBtn')
+const saveEditBtn = document.getElementById('saveEditBtn')
 
 const jobNameEditInput = document.getElementById('jobNameEdit')
 const dateEditInput = document.getElementById('dueDateEdit')
@@ -29,4 +30,5 @@ export {
   priorityEditSelect,
   editDialog,
   cancelEditBtn,
+  saveEditBtn,
 }

@@ -10,6 +10,10 @@ import {
   confirmDeleteBtn,
   cancelEditBtn,
   editDialog,
+  jobNameEditInput,
+  dateEditInput,
+  priorityEditSelect,
+  saveEditBtn,
 } from './elements.js'
 import { formatDate } from './utils.js'
 import { getPriorityClass } from './utils.js'
@@ -20,6 +24,7 @@ window.addEventListener('load', () => {
 })
 
 let deleteItem = null
+let editItem = null
 
 addBtn.addEventListener('click', function () {
   if (jobNameInput.value === '') {
@@ -40,9 +45,9 @@ addBtn.addEventListener('click', function () {
   const dueDateString = dateInput.value
   const priority = prioritySelect.value
 
-  listItem.innerText = `${jobName} - ${formatDate(
+  listItem.innerHTML = `<span>${jobName} - ${formatDate(
     dueDateString,
-  )} - ${priority} `
+  )} - ${priority} </span>`
 
   listItem.setAttribute('class', getPriorityClass(priority))
 
@@ -51,6 +56,12 @@ addBtn.addEventListener('click', function () {
   editBtn.innerText = 'Edit'
 
   editBtn.addEventListener('click', () => {
+    editItem = listItem
+
+    jobNameEditInput.value = jobName
+    dateEditInput.value = dueDateString
+    priorityEditSelect.value = priority
+
     editDialog.showModal()
   })
 
@@ -87,5 +98,22 @@ confirmDeleteBtn.addEventListener('click', () => {
 })
 
 cancelEditBtn.addEventListener('click', () => {
+  editDialog.close()
+})
+
+saveEditBtn.addEventListener('click', () => {
+  if (editItem) {
+    const jobName = jobNameEditInput.value
+    const dueDateString = dateEditInput.value
+    const priority = priorityEditSelect.value
+
+    editItem.querySelector('span').innerText = `${jobName} - ${formatDate(
+      dueDateString,
+    )} - ${priority} `
+
+    editItem.setAttribute('class', getPriorityClass(priority))
+
+    editItem = null
+  }
   editDialog.close()
 })
