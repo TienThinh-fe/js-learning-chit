@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="styleSheet" href="./src/style.css">
+
+</head>
+
+<body>
+  <div class="todo-input-field">
+    <label for="jobName">Job Name:</label>
+    <input id="jobName">
+  </div>
+
+  <div class="todo-input-field">
+    <label for="dueDate">Due Date:</label>
+    <input type="date" id="dueDate" name="dueDate">
+  </div>
+
+  <div class="todo-input-field">
+    <label for="priority">Priority:</label>
+    <select id="priority" name="priority">
+      <option value="high">High</option>
+      <option value="medium">Medium</option>
+      <option value="low">Low</option>
+    </select>
+  </div>
+
+  <button id="add">Add</button>
+
+  <p id="errorMessage"></p>
+
+  <ul id="list"></ul>
+
+  <dialog id="confirmationDialog">
+    <span> Are you sure want to delete this item?</span>
+    <div class="confirmation">
+      <button id="cancelDeleteBtn" class="confirmation__cancel">Cancel</button>
+      <button id="confirmDeleteBtn">I'm sure</button>
+    </div>
+  </dialog>
+  <dialog id="editDialog">
+    <span>Edit</span>
+
+    <div class="todo-input-field">
+      <label for="jobNameEdit">Job Name:</label>
+      <input id="jobNameEdit">
+    </div>
+
+    <div class="todo-input-field">
+      <label for="dueDateEdit">Due Date:</label>
+      <input type="date" id="dueDateEdit" name="dueDateEdit">
+    </div>
+
+    <div class="todo-input-field">
+      <label for="priorityEdit">Priority:</label>
+      <select id="priorityEdit" name="priorityEdit">
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+    </div>
+
+    <div class="confirmation">
+      <button id="cancelEditBtn" class="confirmation__cancel">Cancel</button>
+      <button id="saveEditBtn">Save</button>
+    </div>
+
+  </dialog>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
